@@ -1,54 +1,86 @@
-# トポロジー最適化入門 — 公式サンプルコード
+# 『トポロジー最適化入門』サンプルコード
 
-本リポジトリは、矢地謙太郎 著『トポロジー最適化入門』の公式サンプルコードです。
+本リポジトリは、オーム社刊  
+**『トポロジー最適化入門』**  
+の公式Pythonサンプルコードです。
 
-本書では、連続最適化、逐次凸計画法、有限要素解析、感度解析、密度法によるトポロジー最適化、弾性問題、3次元問題、積層造形を考慮した設計までを、Pythonによる実装とともに解説します。
+本書では、連続最適化、逐次凸計画法、有限要素法、感度解析から、
+トポロジー最適化の実装、さらに弾性問題・3次元問題への展開までを、
+Pythonコードとともに解説しています。
 
-- 書籍公式サイト: https://www.yajiken.jp/book
-- 著者サイト: https://www.yajiken.jp
+📘 **著者による書籍公式サイト**  
+https://www.yajiken.jp/book
 
-> **Note**  本リポジトリのコードは教育・学習を目的としたサンプルです。実務設計における性能、安全性、妥当性を保証するものではありません。
+---
 
-## Contents
+## サンプルコード
 
-| 章 | 題目 | Notebook |
+各Jupyter Notebookは、書籍の各章に対応しています。
+
+| 章 | 内容 | Notebook |
 |---|---|---|
-| 第2章 | 連続最適化 | [`ch02.ipynb`](ch02.ipynb) |
-| 第3章 | 逐次凸計画法 | [`ch03.ipynb`](ch03.ipynb) |
-| 第4章 | 有限要素解析 | [`ch04.ipynb`](ch04.ipynb) |
-| 第5章 | トポロジー最適化問題の定式化 | [`ch05.ipynb`](ch05.ipynb) |
-| 第6章 | 感度解析 | [`ch06.ipynb`](ch06.ipynb) |
-| 第7章 | 実践的なテクニック | [`ch07.ipynb`](ch07.ipynb) |
-| 第8章 | 弾性問題への展開 | [`ch08.ipynb`](ch08.ipynb) |
-| 第9章 | 3次元問題への展開 | [`ch09.ipynb`](ch09.ipynb) |
+| 第2章 | 連続最適化 | [ch02.ipynb](ch02.ipynb) |
+| 第3章 | 逐次凸計画法 | [ch03.ipynb](ch03.ipynb) |
+| 第4章 | 有限要素解析 | [ch04.ipynb](ch04.ipynb) |
+| 第5章 | トポロジー最適化問題の定式化 | [ch05.ipynb](ch05.ipynb) |
+| 第6章 | 感度解析 | [ch06.ipynb](ch06.ipynb) |
+| 第7章 | 実践的なテクニック | [ch07.ipynb](ch07.ipynb) |
+| 第8章 | 弾性問題への展開 | [ch08.ipynb](ch08.ipynb) |
+| 第9章 | 3次元問題への展開 | [ch09.ipynb](ch09.ipynb) |
 
-第1章「トポロジー最適化とは」には対応するNotebookはありません。
+第1章「トポロジー最適化とは」には対応するサンプルコードはありません。
 
-## Supporting modules
+---
 
-Notebookから利用する補助モジュールです。原則としてNotebookと同じディレクトリに置いたまま実行してください。
+## 動作確認環境
 
-- `optimizer.py` — 最適化アルゴリズム
-- `filtering.py` — 2次元問題のフィルタリング
-- `filtering3d.py` — 3次元問題のフィルタリング
-- `sens_heat.py` — 2次元熱伝導問題
-- `sens_heat3d.py` — 3次元熱伝導問題
-- `sens_elastic.py` — 2次元弾性問題
-- `sens_elastic_compmech.py` — コンプライアントメカニズム
+本書および本リポジトリのコードは、以下の環境で動作を確認しています。
 
-## Installation
+| Software / Library | Version |
+|---|---:|
+| Python | 3.13.5 |
+| NumPy | 2.1.3 |
+| SciPy | 1.15.3 |
+| Matplotlib | 3.10.0 |
+| pyAMG* | 5.3.0 |
+| PyVista* | 0.46.4 |
 
-Python環境を用意した後、本リポジトリを取得してください。
+\* pyAMGおよびPyVistaは、第9章「3次元問題への展開」で使用します。
+
+Pythonについては、3.9系以降でも動作を確認しています。
+詳細については、書籍付録「Python環境の設定」を参照してください。
+
+---
+
+## インストール
+
+Pythonがインストールされた環境で、必要なライブラリをインストールします。
+
+```bash
+pip install -r requirements.txt
+```
+
+`requirements.txt` には以下のライブラリが含まれています。
+
+- NumPy
+- SciPy
+- Matplotlib
+- pyAMG
+- PyVista
+- JupyterLab
+
+第2章から第8章までは、主にNumPy、SciPy、Matplotlibを使用します。
+第9章の3次元問題では、追加でpyAMGおよびPyVistaを使用します。
+
+---
+
+## 実行方法
+
+リポジトリを取得します。
 
 ```bash
 git clone https://github.com/yajiken/topology-optimization-book.git
 cd topology-optimization-book
-```
-
-必要なライブラリをインストールします。
-
-```bash
-python -m pip install -r requirements.txt
 ```
 
 JupyterLabを起動します。
@@ -57,41 +89,101 @@ JupyterLabを起動します。
 jupyter lab
 ```
 
-対応する章のNotebookを開き、上から順にセルを実行してください。
+ブラウザ上で、読みたい章に対応するNotebookを開いて実行してください。
 
-## Dependencies
+例えば `ch07.ipynb` は、第7章「実践的なテクニック」に対応しています。
 
-主に以下のPythonパッケージを使用します。
+本書ではJupyterLabの利用を想定していますが、
+VS CodeやGoogle Colabなど、Jupyter Notebook形式（`.ipynb`）を
+実行できる他の環境を利用しても問題ありません。
 
-- NumPy
-- SciPy
-- Matplotlib
-- PyAMG
-- PyVista
-- JupyterLab
+---
 
-第9章の3次元問題では `pyamg` および `pyvista` を使用します。また、3次元例題は計算規模が大きいため、計算機環境によっては長い計算時間や多くのメモリを必要とします。まず動作を確認したい場合は、要素数を小さくして実行してください。
+## Pythonスクリプト
 
-## Relationship to the book
+Notebookに加えて、有限要素解析、感度解析、フィルタリング、
+最適化アルゴリズムなどに使用するPythonスクリプトを収録しています。
 
-本リポジトリは「完成したコードをコピーして使う」ことだけを目的としていません。書籍本文を読みながら、数式とコードの対応を確認し、自分で実装していくことを推奨します。
+```text
+optimizer.py
+filtering.py
+filtering3d.py
+sens_heat.py
+sens_heat3d.py
+sens_elastic.py
+sens_elastic_compmech.py
+```
 
-書籍の正誤表、補足資料、更新情報は公式サイトをご覧ください。
+これらのスクリプトは各Notebookから読み込んで使用します。
+NotebookとPythonスクリプトは同じディレクトリに配置した状態で実行してください。
 
-https://www.yajiken.jp/book
+---
+
+## 第9章の実行について
+
+第9章では3次元問題を扱うため、第2章から第8章までの例題と比較して
+計算時間および必要なメモリが大幅に増加します。
+
+使用する計算機環境によっては、計算に時間がかかったり、
+メモリが不足したりする場合があります。
+
+動作確認を目的とする場合は、必要に応じて解析モデルの要素数を
+小さくして実行してください。
+
+---
+
+## 書籍について
+
+**『トポロジー最適化入門』**  
+矢地謙太郎 著  
+オーム社
+
+書籍情報、正誤表、補足資料などは、以下の公式サイトで公開します。
+
+**https://www.yajiken.jp/book**
+
+---
+
+## 引用について
+
+本リポジトリのコードを研究・教育・出版物等で利用し、引用が必要な場合は、
+以下の書籍を引用してください。
+
+> 矢地謙太郎，『トポロジー最適化入門』，オーム社，2026．
+
+---
 
 ## Issues
 
-コードの不具合や、書籍との対応に関する技術的な問題は [GitHub Issues](../../issues) から報告してください。
+コードの不具合を発見された場合は、
+[Issues](../../issues) からお知らせください。
 
-書籍本文の正誤情報については、公式サイトの正誤表を最新版とします。
+書籍本文の誤植・訂正については、
+書籍公式サイトの正誤表をご確認ください。
 
-## Citation
+---
 
-研究・教育等で本書または本リポジトリを参照する場合は、書籍を引用してください。引用情報は [`CITATION.cff`](CITATION.cff) にも記載しています。
+## 利用上の注意
 
-## License
+本リポジトリで公開しているコードは、
+『トポロジー最適化入門』の内容を理解するための
+教育・学習目的のサンプルコードです。
 
-ソースコードは [BSD 3-Clause License](LICENSE) のもとで公開します。
+コードの利用によって得られる解析結果や最適化結果について、
+実務設計における性能、安全性、妥当性を保証するものではありません。
 
-Copyright (c) 2026 Kentaro Yaji
+---
+
+## ライセンス
+
+本リポジトリのソースコードは
+[BSD 3-Clause License](LICENSE)
+のもとで公開しています。
+
+---
+
+## 著者
+
+**矢地謙太郎 / Kentaro Yaji**
+
+🌐 https://www.yajiken.jp
