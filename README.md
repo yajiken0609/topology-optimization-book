@@ -87,7 +87,7 @@ pip install -r requirements.txt
 リポジトリを取得します。
 
 ```bash
-git clone https://github.com/yajiken/topology-optimization-book.git
+git clone https://github.com/yajiken0609/topology-optimization-book.git
 cd topology-optimization-book
 ```
 
