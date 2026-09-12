@@ -45,9 +45,6 @@ class SensHeat:
         return f_TC, gradf_TC
 # 親クラスを継承して部分領域の温度と感度を取得する子クラスを定義
 class SubsetTemp(SensHeat):
-    def __init__(self):
-        super().__init__()
-        self._setup_fem()
     def _setup_fem(self):
         super()._setup_fem()
         x_p, y_p = np.meshgrid(np.linspace(0, self.L1, self.n1+1), np.linspace(0, self.L2, self.n2+1))        

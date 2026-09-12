@@ -30,7 +30,7 @@ class Projection(Filtering):
         return grad[None, :] if g else grad
 # Projectionクラスを継承してAMFilterクラスを作成
 class AMFilter(Projection):
-    def __init__(self, n1, n2, n3, r, eta, beta, P=40.0, eta_s=0.5, eps=1e-4):
+    def __init__(self, n1, n2, n3, r, eta, beta, P=40, eta_s=0.5, eps=1e-4):
         super().__init__(n1, n2, n3, r, eta, beta)
         self.P, self.eps, self.Q = P, eps, P + np.log(5)/np.log(eta_s)
         self.shifts = [(0,0), (1,0), (-1,0), (0,1), (0,-1)]

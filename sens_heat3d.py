@@ -42,10 +42,10 @@ class SensHeat3D:
         ml = pyamg.smoothed_aggregation_solver(K_free)
         M = ml.aspreconditioner(cycle='V')
         u_free, _ = spla.cg(K_free, f_free, M=M, rtol=1e-5, atol=1e-5)        
-        self.u = np.zeros(len(self.f))
-        self.u[self.free] = u_free
+        self.d = np.zeros(len(self.f))
+        self.d[self.free] = u_free
     def compute_obj_sens(self, x):
         self._solve_forward(x)
-        f_TC = np.dot(self.f, self.u)
-        gradf_TC = -self.p*(self.k-self.k0)*x**(self.p-1)*np.sum((self.u[self.ind_edge]@self.Ke)*self.u[self.ind_edge], axis=1)
+        f_TC = np.dot(self.f, self.d)
+        gradf_TC = -self.p*(self.k-self.k0)*x**(self.p-1)*np.sum((self.d[self.ind_edge]@self.Ke)*self.d[self.ind_edge], axis=1)
         return f_TC, gradf_TC

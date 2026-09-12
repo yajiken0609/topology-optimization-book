@@ -37,17 +37,17 @@ class Projection(Filtering):
         if itr > 0 and itr % self.interval == 0: self.beta = min(self.beta*self.coeff, self.beta_max)
         return self._proj(self.x_filt)
     def modify_sensitivity_gradf(self, gradf):
-        return self.H@(gradf * self._proj(self.x_filt, d=True))/self.Hs
+        return self.H@(gradf*self._proj(self.x_filt, d=True)/self.Hs)
     def modify_sensitivity_gradgi(self, gradgi):
-        return (self.H@(gradgi * self._proj(self.x_filt, d=True)).T/self.Hs[:,None]).T
+        return (self.H@(gradgi*self._proj(self.x_filt, d=True)/self.Hs).T).T
 # 親クラスを継承して最大寸法制約のクラスを作成
 class MaxLength(Filtering):
     def __init__(self, n1, n2, r, b):
         super().__init__(n1, n2, r)
         self.b = b
     def get_alpha(self):
-        return 1-2/np.pi*(np.arccos(self.b/self.r)-self.b/(np.pi*self.r)*np.sqrt(1-(self.b/self.r)**2))
+        return 1-2/np.pi*(np.arccos(self.b/self.r)-self.b/self.r*np.sqrt(1-(self.b/self.r)**2))
     def _get_weight(self, dist):
         return np.ones_like(dist)
     def modify_sensitivity_gradgi(self, gradgi):
-        return (self.H@gradgi.T/self.Hs[:, None]).T
+        return (self.H@(gradgi/self.Hs).T).T
