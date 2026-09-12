@@ -1,5 +1,11 @@
 # 『トポロジー最適化入門』サンプルコード
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.9%2B-blue">
+  <img src="https://img.shields.io/badge/License-BSD%203--Clause-green">
+  <img src="https://img.shields.io/badge/Book-Ohmsha-orange">
+</p>
+
 本リポジトリは、オーム社刊  
 **『トポロジー最適化入門』**  
 の公式Pythonサンプルコードです。
