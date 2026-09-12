@@ -6,6 +6,10 @@
   <img src="https://img.shields.io/badge/Book-Ohmsha-orange">
 </p>
 
+<p align="center">
+  <img src="images/video_heat3d.gif" width="300" alt="Topology optimization process">
+</p>
+
 本リポジトリは、オーム社刊  
 **『トポロジー最適化入門』**  
 の公式Pythonサンプルコードです。
