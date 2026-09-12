@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="images/video_heat3d.gif" width="300" alt="Topology optimization process">
+  <img src="images/video_heat3d.gif" width="400" alt="Topology optimization process">
 </p>
 
 本リポジトリは、オーム社刊  
