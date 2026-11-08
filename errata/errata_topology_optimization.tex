@@ -4,6 +4,7 @@
 \usepackage{array}
 \usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{amsmath}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{url}
@@ -77,6 +78,34 @@ Pythonコード(\href{https://github.com/yajiken0609/topology-optimization-book/
 \small
 \textbf{訂正内容：}
 同上．
+\hfill{\footnotesize （第1刷）}
+}
+\\[1.5ex]
+%=================================================================
+\midrule
+90 &
+式(4.35) &
+\[
+\begin{bmatrix}
+   \frac{Ak}{h} & -\frac{Ak}{h} & 0 & 0\\
+  -\frac{Ak}{h} &  \frac{Ak}{h} & 0 & 0\\
+   0 & 0 & 0 & 0
+\end{bmatrix}
+\] &
+\[
+\begin{bmatrix}
+   \frac{Ak}{h} & -\frac{Ak}{h} & 0 & 0\\
+  -\frac{Ak}{h} &  \frac{Ak}{h} & 0 & 0\\
+   0 & 0 & 0 & 0\\
+   0 & 0 & 0 & 0
+\end{bmatrix}
+\]
+\\[1ex]
+
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{%
+\small
+\textbf{訂正内容：}
+最初の行列が$3\times 4$になっていますが，正しくは$4\times 4$となります．
 \hfill{\footnotesize （第1刷）}
 }
 \\[1.5ex]
