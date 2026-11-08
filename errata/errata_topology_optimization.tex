@@ -8,6 +8,7 @@
 \usepackage[dvipdfmx]{graphicx}
 \usepackage[dvipdfmx]{hyperref}
 \usepackage{url}
+\newcommand{\ctext}[1]{\raise0.2ex\hbox{\textcircled{\scriptsize{#1}}}}
 
 \hypersetup{
   colorlinks=true,
@@ -106,6 +107,45 @@ Pythonコード(\href{https://github.com/yajiken0609/topology-optimization-book/
 \small
 \textbf{訂正内容：}
 最初の行列が$3\times 4$になっていますが，正しくは$4\times 4$となります．
+\hfill{\footnotesize （第1刷）}
+}
+\\[1.5ex]
+%=================================================================
+\midrule
+108 &
+式(4.62) &
+\[
+\begin{bmatrix}
+   S^{\ctext{1}}\\
+   S^{\ctext{1}}+S^{\ctext{2}}\\
+   S^{\ctext{2}}\\
+   S^{\ctext{1}}+S^{\ctext{2}}+S^{\ctext{3}}\\
+   S^{\ctext{1}}+S^{\ctext{2}}+S^{\ctext{3}}+S^{\ctext{4}}\\
+   S^{\ctext{4}}\\
+   S^{\ctext{3}}\\
+   S^{\ctext{3}}+S^{\ctext{4}}\\
+   S^{\ctext{4}}
+\end{bmatrix}
+\] &
+\[
+\begin{bmatrix}
+   S^{\ctext{1}}\\
+   S^{\ctext{1}}+S^{\ctext{2}}\\
+   S^{\ctext{2}}\\
+   S^{\ctext{1}}+S^{\ctext{3}}\\
+   S^{\ctext{1}}+S^{\ctext{2}}+S^{\ctext{3}}+S^{\ctext{4}}\\
+   S^{\ctext{2}}+S^{\ctext{4}}\\
+   S^{\ctext{3}}\\
+   S^{\ctext{3}}+S^{\ctext{4}}\\
+   S^{\ctext{4}}
+\end{bmatrix}
+\]
+\\[1ex]
+
+\multicolumn{4}{@{}p{0.97\textwidth}@{}}{%
+\small
+\textbf{訂正内容：}
+$S$に関する熱源ベクトルの第4成分と第6成分に誤植があります．
 \hfill{\footnotesize （第1刷）}
 }
 \\[1.5ex]
